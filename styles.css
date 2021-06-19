@@ -58,8 +58,42 @@
   
   @keyframes example {
     0%   {background-color:red; left:0px; top:0px;}
-    25%  {background-color:yellow; left:400px; top:0px;}
+    25%  {background-color:yellow; left:400px; top:100px;}
     50%  {background-color:blue; left:400px; top:200px;}
     75%  {background-color:green; left:0px; top:400px;}
     100% {background-color:red; left:0px; top:0px;}
+  }
+
+  #pentagon {
+    position: relative;
+    width: 54px;
+    box-sizing: content-box;
+    border-width: 50px 18px 0;
+    border-style: solid;
+    border-color: magenta transparent;
+    z-index: 1;
+    animation: shape 4s infinite;
+  }
+  #pentagon:before {
+    content: "";
+    position: absolute;
+    height: 0;
+    width: 0;
+    top: -85px;
+    left: -18px;
+    border-width: 0 45px 35px;
+    border-style: solid;
+    border-color: transparent transparent magenta;
+    z-index: 1;
+  }
+
+  @keyframes shape {
+    0% {
+      
+      transform: rotate(0deg);
+    }
+
+    100% {
+      transform: rotate(360deg);
+    }
   }
